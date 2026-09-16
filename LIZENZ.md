@@ -1,6 +1,6 @@
 # Nutzungserlaubnis
 
-Copyright © 2026 M. Bösser, Adolf-Reichwein-Schule Marburg
+Copyright © 2026 Bös, ARS
 
 ## Erlaubt
 

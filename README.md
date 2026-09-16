@@ -3,10 +3,10 @@
 Ein Editor für **UML-Diagramme**: Klassendiagramm, Objektdiagramm,
 Sequenzdiagramm und Use-Case-Diagramm — in einem Projekt, in einer Datei.
 
-Entstanden für die Informatik im Beruflichen Gymnasium an der
-Adolf-Reichwein-Schule Marburg. Läuft unter Windows, macOS und Linux;
-gebraucht wird nur **Java 17 oder neuer**. Keine Installation, kein Setup,
-keine Internetverbindung — der Ordner läuft auch von einem Stick.
+Entstanden für die Informatik im Beruflichen Gymnasium an der ARS. Läuft unter
+Windows, macOS und Linux; gebraucht wird nur **Java 17 oder neuer**. Keine
+Installation, kein Setup, keine Internetverbindung — der Ordner läuft auch von
+einem Stick.
 
 ## Herunterladen
 
