@@ -32,8 +32,9 @@ gesetzt, statische unterstrichen.
 
 **Strg+D** blendet die Attribute ein, die sich aus den Beziehungen **ergeben** —
 blau gezeichnet, rot bei einem Namenskonflikt. Damit wird der Schritt von der
-Analyse zum Entwurf sichtbar, statt behauptet zu werden: Dieselben Beziehungen,
-einmal als Linie und einmal als Referenzattribut.
+Analyse zum Entwurf und zum Programm sichtbar, statt behauptet zu werden:
+dieselbe Beziehung einmal als Linie, einmal als Referenzattribut und im
+Java-Export als Feld.
 
 ![Dasselbe Diagramm mit den abgeleiteten Beziehungsattributen](bilder/klassendiagramm-entwurf.png)
 
