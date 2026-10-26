@@ -15,9 +15,9 @@ eine ZIP-Datei, auspacken, starten.
 
 | | |
 |---|---|
-| Windows | `ARS-UML-Editor V2.1 starten.bat` doppelklicken |
-| macOS | `ARS-UML-Editor V2.1 starten.command` doppelklicken — beim ersten Mal einmalig `chmod +x` nötig, siehe LIESMICH |
-| überall | `java -jar ARS-UML-Editor-V2.1.jar` |
+| Windows | `ARS-UML-Editor V3.0 starten.bat` doppelklicken |
+| macOS | `ARS-UML-Editor V3.0 starten.command` doppelklicken — beim ersten Mal einmalig `chmod +x` nötig, siehe LIESMICH |
+| überall | `java -jar ARS-UML-Editor-V3.0.jar` |
 
 ## Was es kann
 
@@ -54,12 +54,44 @@ rechts, wie die UML es vorsieht. Datentypen wie `MyLinkedList<T>` lassen sich
 überall eintragen, wo ein Typ erwartet wird. Auch der Java-Import erkennt beides
 wieder.
 
+Eine **Aufzählung** ist die dritte Art von Kasten: `<<enumeration>>` über dem
+Namen, die Konstanten im Fach darunter — und im Export ein echtes `enum`.
+
 ![Schnittstellen und generische Klassen am Beispiel einer Warteschlange](bilder/schnittstellen-generics.png)
 
 Das Bild zeigt beides zusammen: `MyQueueInterface` legt fest, was eine
 Warteschlange können muss; `ArrayQueue` und `ListQueue` erfüllen sie auf zwei
 verschiedene Weisen — die eine über eine indizierte, die andere über eine
 verkettete Liste. Genau der Unterschied, um den es im Unterricht geht.
+
+### Pakete — Schichten, die man sieht
+
+Ein **Paket** gliedert das Klassendiagramm: der Kasten mit dem Reiter, in dem
+Klassen, Schnittstellen, Aufzählungen und weitere Pakete liegen. Hineingezogen
+wird mit der Maus oder über das Rechtsklickmenü; das Paket wächst mit seinem
+Inhalt und nimmt ihn beim Verschieben mit. Jedes bekommt auf Wunsch eine
+**Hintergrundfarbe** — am Beamer ist das der Unterschied zwischen „da sind drei
+Kästen" und „da sind drei Schichten".
+
+![Ein Projekt in den Paketen gui, modell und persistenz](bilder/pakete.png)
+
+Der Ertrag steht an den Linien **zwischen** den Paketen: Die Oberfläche kennt das
+Modell und den Speicher — umgekehrt weiß das Modell von beiden nichts. Und das
+`~` vor `DateiSpeicher` heißt, dass die Klasse nur in ihrem eigenen Paket sichtbar
+ist: Das Hauptfenster hängt an der **Schnittstelle** `Speicher`, nicht an der
+Umsetzung. Der Java-Export hält sich daran, und der Übersetzer weist einen Zugriff
+von außen zurück.
+
+**Zuklappen** macht aus demselben Diagramm eine Übersicht. Rechtsklick, und von
+einem Paket bleiben Reiter und Name; die Beziehungen nach außen enden am
+Paketkasten, mehrere zum selben Ziel werden zu einer zusammengefasst. Übrig bleibt
+genau die Frage, um die es dann geht: Welches Paket hängt von welchem ab?
+
+![Dasselbe Diagramm mit zugeklappten Paketen](bilder/pakete-zugeklappt.png)
+
+Im **Java-Export** wird aus jedem Paket ein Unterordner mit eigener
+`package`-Zeile; benutzt eine Klasse eine aus einem anderen Paket, schreibt der
+Editor die `import`-Zeile dazu. Der erzeugte Quelltext lässt sich übersetzen.
 
 ### Objektdiagramm
 
@@ -109,8 +141,10 @@ sich verschieben, und eine **freie Linie** dient als reine Anmerkung — etwa um
 einem Sequenzdiagramm zu zeigen, welche Daten zwischen zwei Aufrufen übertragen
 werden.
 
-**Elf Beispielprojekte** liegen bei, von der einfachen Bank bis zu einem
-Chorwettbewerb und einer Client-Server-Kommunikation.
+**Dreizehn Beispielprojekte** liegen bei, von der einfachen Bank bis zu einem
+Chorwettbewerb, einer Client-Server-Kommunikation und einer in Pakete gegliederten
+Schulverwaltung. Jedes ist in der beiliegenden LIESMICH einzeln beschrieben —
+mit dem, was sich daran zeigen lässt, und mit Fragen für den Unterricht.
 
 **Eine ausführliche Anleitung steckt im Programm** — Taste **F1**. Sie erklärt
 jedes Werkzeug, die vier Diagrammarten und die Regeln, nach denen der Editor
