@@ -42,6 +42,13 @@ Die Ableitung folgt den Pfeilen: Ein Pfeil an einem Ende heißt, die Klasse am
 anderen Ende bekommt ein Attribut; ein **X** heißt ausdrücklich keines. Der Modus
 ist reine Anzeige — das Modell bleibt unverändert.
 
+Und dasselbe Diagramm ein drittes Mal: **zugeklappt**. Über das Rechtsklickmenü
+bleibt von jeder Klasse nur der Name stehen — übrig bleiben die Beziehungen, die
+Rollennamen und die Multiplizitäten, also genau das, worum es beim Besprechen der
+Struktur geht.
+
+![Dasselbe Diagramm mit zugeklappten Klassen](bilder/klassendiagramm-zugeklappt.png)
+
 ### Schnittstellen und generische Klassen
 
 Eine **Schnittstelle** ist eine eigene Art von Kasten: `<<interface>>` steht über
