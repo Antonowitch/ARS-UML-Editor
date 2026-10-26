@@ -15,9 +15,9 @@ eine ZIP-Datei, auspacken, starten.
 
 | | |
 |---|---|
-| Windows | `ARS-UML-Editor V2.0 starten.bat` doppelklicken |
-| macOS | `ARS-UML-Editor V2.0 starten.command` doppelklicken — beim ersten Mal einmalig `chmod +x` nötig, siehe LIESMICH |
-| überall | `java -jar ARS-UML-Editor-V2.0.jar` |
+| Windows | `ARS-UML-Editor V2.1 starten.bat` doppelklicken |
+| macOS | `ARS-UML-Editor V2.1 starten.command` doppelklicken — beim ersten Mal einmalig `chmod +x` nötig, siehe LIESMICH |
+| überall | `java -jar ARS-UML-Editor-V2.1.jar` |
 
 ## Was es kann
 
@@ -41,6 +41,25 @@ Java-Export als Feld.
 Die Ableitung folgt den Pfeilen: Ein Pfeil an einem Ende heißt, die Klasse am
 anderen Ende bekommt ein Attribut; ein **X** heißt ausdrücklich keines. Der Modus
 ist reine Anzeige — das Modell bleibt unverändert.
+
+### Schnittstellen und generische Klassen
+
+Eine **Schnittstelle** ist eine eigene Art von Kasten: `<<interface>>` steht über
+dem Namen, ihre Methoden sind kursiv, und eine Klasse wird mit der **Realisierung**
+daran gebunden — gestrichelte Linie, offenes Dreieck. Im Java-Export entsteht daraus
+ein echtes `interface` und ein `implements`.
+
+**Generische Klassen** tragen ihre Platzhalter im gestrichelten Kästchen oben
+rechts, wie die UML es vorsieht. Datentypen wie `MyLinkedList<T>` lassen sich
+überall eintragen, wo ein Typ erwartet wird. Auch der Java-Import erkennt beides
+wieder.
+
+![Schnittstellen und generische Klassen am Beispiel einer Warteschlange](bilder/schnittstellen-generics.png)
+
+Das Bild zeigt beides zusammen: `MyQueueInterface` legt fest, was eine
+Warteschlange können muss; `ArrayQueue` und `ListQueue` erfüllen sie auf zwei
+verschiedene Weisen — die eine über eine indizierte, die andere über eine
+verkettete Liste. Genau der Unterschied, um den es im Unterricht geht.
 
 ### Objektdiagramm
 
@@ -82,6 +101,13 @@ Klassendiagramm — mit Vererbung und Assoziationen.
 für Arbeitsblätter, Beamer und Ausdruck; LibreOffice und Word fügen es ein wie
 jedes andere Bild. Ist etwas **ausgewählt**, wird nur dieser Ausschnitt
 exportiert, eng zugeschnitten.
+
+**Ordnung im Bild.** Elemente lassen sich aneinander **ausrichten** und mittig
+setzen, ein **Raster** ein- und ausblenden und getrennt davon **einrasten**.
+Beziehungslinien knicken um Kästen herum, Rollennamen und Multiplizitäten lassen
+sich verschieben, und eine **freie Linie** dient als reine Anmerkung — etwa um in
+einem Sequenzdiagramm zu zeigen, welche Daten zwischen zwei Aufrufen übertragen
+werden.
 
 **Elf Beispielprojekte** liegen bei, von der einfachen Bank bis zu einem
 Chorwettbewerb und einer Client-Server-Kommunikation.
