@@ -15,9 +15,9 @@ eine ZIP-Datei, auspacken, starten.
 
 | | |
 |---|---|
-| Windows | `ARS-UML-Editor V3.0 starten.bat` doppelklicken |
-| macOS | `ARS-UML-Editor V3.0 starten.command` doppelklicken — beim ersten Mal einmalig `chmod +x` nötig, siehe LIESMICH |
-| überall | `java -jar ARS-UML-Editor-V3.0.jar` |
+| Windows | `ARS-UML-Editor V3.1 starten.bat` doppelklicken |
+| macOS | `ARS-UML-Editor V3.1 starten.command` doppelklicken — beim ersten Mal einmalig `chmod +x` nötig, siehe LIESMICH |
+| überall | `java -jar ARS-UML-Editor-V3.1.jar` |
 
 ## Was es kann
 
@@ -64,6 +64,11 @@ wieder.
 Eine **Aufzählung** ist die dritte Art von Kasten: `<<enumeration>>` über dem
 Namen, die Konstanten im Fach darunter — und im Export ein echtes `enum`.
 
+Ein Attribut lässt sich als **statisch** und als **final** kennzeichnen. Zusammen
+ergeben die beiden die Konstante: `+ MWST : double = 0.19 {readOnly}`,
+unterstrichen und mit dem Lesezeichen der UML — im Java-Export
+`public static final`.
+
 ![Schnittstellen und generische Klassen am Beispiel einer Warteschlange](bilder/schnittstellen-generics.png)
 
 Das Bild zeigt beides zusammen: `MyQueueInterface` legt fest, was eine
@@ -83,7 +88,12 @@ Kästen" und „da sind drei Schichten".
 ![Ein Projekt in den Paketen gui, modell und persistenz](bilder/pakete.png)
 
 Der Ertrag steht an den Linien **zwischen** den Paketen: Die Oberfläche kennt das
-Modell und den Speicher — umgekehrt weiß das Modell von beiden nichts. Und das
+Modell und den Speicher — umgekehrt weiß das Modell von beiden nichts. Dafür gibt
+es seit V3.1 die **Abhängigkeit**, die gestrichelte Linie mit offener Spitze: „A
+benutzt B". Sie ist die richtige Linie, wenn eine Klasse eine andere *braucht*,
+aber nicht *hat* — als Parameter, als Rückgabewert, oder weil sie sie in einer
+Methode erzeugt. Ein Feld wäre dann falsch und eine Assoziation damit auch. Als
+einzige Beziehung darf sie auch von Paket zu Paket gehen. Und das
 `~` vor `DateiSpeicher` heißt, dass die Klasse nur in ihrem eigenen Paket sichtbar
 ist: Das Hauptfenster hängt an der **Schnittstelle** `Speicher`, nicht an der
 Umsetzung. Der Java-Export hält sich daran, und der Übersetzer weist einen Zugriff
@@ -148,9 +158,9 @@ sich verschieben, und eine **freie Linie** dient als reine Anmerkung — etwa um
 einem Sequenzdiagramm zu zeigen, welche Daten zwischen zwei Aufrufen übertragen
 werden.
 
-**Dreizehn Beispielprojekte** liegen bei, von der einfachen Bank bis zu einem
-Chorwettbewerb, einer Client-Server-Kommunikation und einer in Pakete gegliederten
-Schulverwaltung. Jedes ist in der beiliegenden LIESMICH einzeln beschrieben —
+**Vierzehn Beispielprojekte** liegen bei, von der einfachen Bank bis zu einem
+Chorwettbewerb, einer Client-Server-Kommunikation, einer in Pakete gegliederten
+Schulverwaltung und einem Webshop mit Aufzählungen und Abhängigkeiten. Jedes ist in der beiliegenden LIESMICH einzeln beschrieben —
 mit dem, was sich daran zeigen lässt, und mit Fragen für den Unterricht.
 
 **Eine ausführliche Anleitung steckt im Programm** — Taste **F1**. Sie erklärt
