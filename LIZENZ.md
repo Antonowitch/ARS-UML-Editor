@@ -13,8 +13,8 @@ Der **ARS-UML-Editor** darf von jeder Person und jeder Bildungseinrichtung
 werden. Eine Anmeldung oder Rückmeldung ist nicht nötig; über einen
 Hinweis, wo das Programm eingesetzt wird, freue ich mich trotzdem.
 
-Bei Weitergabe bitte das vollständige Paket zusammen mit dieser Datei
-und der `LIESMICH.txt` weitergeben.
+Bei Weitergabe bitte das vollständige Paket zusammen mit dieser Datei,
+der `LIESMICH.txt` und der `LIZENZ-FlatLaf.txt` weitergeben.
 
 ## Nicht erlaubt
 
@@ -37,6 +37,19 @@ niemand mehr.
 
 Eigene Klassen dürfen jederzeit in die Bibliothek aufgenommen und als
 `.ARScls`-Datei weitergegeben werden.
+
+## Enthaltene Fremdbibliothek: FlatLaf
+
+Seit Fassung 3.2 steckt in der JAR die Bibliothek **FlatLaf** 3.7.2
+(Copyright © FormDev Software GmbH), die das Aussehen der Fenster liefert.
+FlatLaf steht unter der **Apache License 2.0**, nicht unter dieser
+Nutzungserlaubnis. Ihr Lizenztext liegt dem Paket als `LIZENZ-FlatLaf.txt`
+bei und steht zusätzlich in der JAR unter `META-INF/LIZENZ-FlatLaf.txt`;
+er gehört bei jeder Weitergabe dazu.
+
+Die Einschränkungen oben — keine kommerzielle Nutzung, keine Veränderung —
+gelten nur für den ARS-UML-Editor selbst. Für FlatLaf gelten allein die
+Bedingungen der Apache License 2.0.
 
 ## Keine Gewährleistung
 

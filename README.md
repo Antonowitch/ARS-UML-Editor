@@ -15,11 +15,27 @@ eine ZIP-Datei, auspacken, starten.
 
 | | |
 |---|---|
-| Windows | `ARS-UML-Editor V3.1 starten.bat` doppelklicken |
-| macOS | `ARS-UML-Editor V3.1 starten.command` doppelklicken — beim ersten Mal einmalig `chmod +x` nötig, siehe LIESMICH |
-| überall | `java -jar ARS-UML-Editor-V3.1.jar` |
+| Windows | `ARS-UML-Editor V3.2 starten.bat` doppelklicken |
+| macOS | `ARS-UML-Editor V3.2 starten.command` doppelklicken — beim ersten Mal einmalig `chmod +x` nötig, siehe LIESMICH |
+| überall | `java -jar ARS-UML-Editor-V3.2.jar` |
+
+**Hinweis für macOS:** Das Aussehen der Fenster kommt seit V3.2 von der Bibliothek
+[FlatLaf](https://www.formdev.com/flatlaf/). Deren eigene Titelleiste mit
+eingebetteter Menüleiste gibt es auf dem Mac nicht — *„FlatLaf window decorations
+and embedded menu bar are not available on macOS"*. Auf dem Mac bleibt deshalb die
+gewohnte Titelleiste von macOS, und die Menüleiste steht darunter im Fenster. Alles
+andere sieht aus wie auf den Bildern hier und funktioniert genauso.
 
 ## Was es kann
+
+### Dunkel oder hell
+
+Seit V3.2 startet der Editor **dunkel**: Fenster, Menüs, Dialoge und
+Zeichenfläche. Ein Klick im Menü *Diagramm* macht alles hell, sofort und ohne
+Neustart — so wie im letzten Bild dieser Seite. **Exportierte Bilder sind immer
+hell**, als PNG wie als SVG: Sie landen auf Arbeitsblättern und im Ausdruck.
+Farben mit Bedeutung behalten ihren Ton — Rot für einen Fehler, Blau für die
+abgeleiteten Attribute —, nur heller, damit sie auf dunklem Grund lesbar sind.
 
 ### Klassendiagramm — und der Umschalter, der den Entwurfsschritt zeigt
 
@@ -42,12 +58,29 @@ Die Ableitung folgt den Pfeilen: Ein Pfeil an einem Ende heißt, die Klasse am
 anderen Ende bekommt ein Attribut; ein **X** heißt ausdrücklich keines. Der Modus
 ist reine Anzeige — das Modell bleibt unverändert.
 
-Und dasselbe Diagramm ein drittes Mal: **zugeklappt**. Über das Rechtsklickmenü
-bleibt von jeder Klasse nur der Name stehen — übrig bleiben die Beziehungen, die
-Rollennamen und die Multiplizitäten, also genau das, worum es beim Besprechen der
-Struktur geht.
+Und dasselbe Diagramm ein drittes Mal: **ohne Methoden**. Über das
+Rechtsklickmenü einer Klasse lassen sich *Attribute anzeigen* und *Methoden
+anzeigen* einzeln abhaken; das Fach verschwindet dann ganz. Übrig bleibt die
+Struktur — die Klassen, ihre Attribute und die Beziehungen, um die es beim
+Besprechen geht. Die Klasse hat ihre Methoden trotzdem, auch im Java-Export.
+Wer noch weiter verdichten will, **klappt** eine Klasse ganz **zu**: Dann bleibt
+nur der Name stehen.
 
-![Dasselbe Diagramm mit zugeklappten Klassen](bilder/klassendiagramm-zugeklappt.png)
+![Dasselbe Diagramm mit ausgeblendeten Methoden](bilder/klassendiagramm-ohne-methoden.png)
+
+### Beziehungen mit einem Klick
+
+Ein **Rechtsklick auf eine Beziehung** setzt Navigierbarkeit, Aggregation und
+Multiplizität für jedes Ende einzeln — ohne Dialog. Wählt man die Aggregation am
+anderen Ende, wandert die Raute dorthin, und Rollennamen und Multiplizitäten
+bleiben an ihrer Klasse.
+
+![Das Kontextmenü einer Assoziation](bilder/kontextmenue-linie.png)
+
+Der **Linienstil** macht eine Linie **rechtwinklig**: nur noch waagerechte und
+senkrechte Stücke, und das bleibt so, wenn man die Kästen verschiebt — der Weg
+wird jedes Mal neu gerechnet. **Strg+A** und dann **Strg+E** macht ein ganzes
+Diagramm rechtwinklig, **Strg+L** wieder gerade.
 
 ### Schnittstellen und generische Klassen
 
@@ -69,12 +102,12 @@ ergeben die beiden die Konstante: `+ MWST : double = 0.19 {readOnly}`,
 unterstrichen und mit dem Lesezeichen der UML — im Java-Export
 `public static final`.
 
-![Schnittstellen und generische Klassen am Beispiel einer Warteschlange](bilder/schnittstellen-generics.png)
+![Schnittstellen und generische Klassen am Beispiel eines Stapels, im hellen Erscheinungsbild](bilder/schnittstellen-generics.png)
 
-Das Bild zeigt beides zusammen: `MyQueueInterface` legt fest, was eine
-Warteschlange können muss; `ArrayQueue` und `ListQueue` erfüllen sie auf zwei
-verschiedene Weisen — die eine über eine indizierte, die andere über eine
-verkettete Liste. Genau der Unterschied, um den es im Unterricht geht.
+Das Bild zeigt beides zusammen, diesmal im hellen Erscheinungsbild: Die generische
+Schnittstelle `Stapel` legt fest, was ein Stapel können muss; `ArrayStapel` erfüllt
+sie über ein Array, und `Verlauf` benutzt einen Stapel, ohne zu wissen, welche
+Umsetzung dahintersteht. Die Konstante `ANFANGSGROESSE` ist unterstrichen.
 
 ### Pakete — Schichten, die man sieht
 
@@ -83,28 +116,26 @@ Klassen, Schnittstellen, Aufzählungen und weitere Pakete liegen. Hineingezogen
 wird mit der Maus oder über das Rechtsklickmenü; das Paket wächst mit seinem
 Inhalt und nimmt ihn beim Verschieben mit. Jedes bekommt auf Wunsch eine
 **Hintergrundfarbe** — am Beamer ist das der Unterschied zwischen „da sind drei
-Kästen" und „da sind drei Schichten".
+Kästen" und „da sind drei Schichten". Im dunklen Erscheinungsbild erscheint sie
+abgedunkelt im selben Farbton.
 
 ![Ein Projekt in den Paketen gui, modell und persistenz](bilder/pakete.png)
 
 Der Ertrag steht an den Linien **zwischen** den Paketen: Die Oberfläche kennt das
 Modell und den Speicher — umgekehrt weiß das Modell von beiden nichts. Dafür gibt
-es seit V3.1 die **Abhängigkeit**, die gestrichelte Linie mit offener Spitze: „A
-benutzt B". Sie ist die richtige Linie, wenn eine Klasse eine andere *braucht*,
-aber nicht *hat* — als Parameter, als Rückgabewert, oder weil sie sie in einer
-Methode erzeugt. Ein Feld wäre dann falsch und eine Assoziation damit auch. Als
-einzige Beziehung darf sie auch von Paket zu Paket gehen. Und das
-`~` vor `DateiSpeicher` heißt, dass die Klasse nur in ihrem eigenen Paket sichtbar
-ist: Das Hauptfenster hängt an der **Schnittstelle** `Speicher`, nicht an der
-Umsetzung. Der Java-Export hält sich daran, und der Übersetzer weist einen Zugriff
-von außen zurück.
+es die **Abhängigkeit**, die gestrichelte Linie mit offener Spitze: „A benutzt B".
+Sie ist die richtige Linie, wenn eine Klasse eine andere *braucht*, aber nicht
+*hat* — als Parameter, als Rückgabewert, oder weil sie sie in einer Methode
+erzeugt. Ein Feld wäre dann falsch und eine Assoziation damit auch. Als einzige
+Beziehung darf sie auch von Paket zu Paket gehen. Und das `~` vor `DateiSpeicher`
+heißt, dass die Klasse nur in ihrem eigenen Paket sichtbar ist: Das Hauptfenster
+hängt an der **Schnittstelle** `Speicher`, nicht an der Umsetzung. Der Java-Export
+hält sich daran, und der Übersetzer weist einen Zugriff von außen zurück.
 
 **Zuklappen** macht aus demselben Diagramm eine Übersicht. Rechtsklick, und von
 einem Paket bleiben Reiter und Name; die Beziehungen nach außen enden am
 Paketkasten, mehrere zum selben Ziel werden zu einer zusammengefasst. Übrig bleibt
 genau die Frage, um die es dann geht: Welches Paket hängt von welchem ab?
-
-![Dasselbe Diagramm mit zugeklappten Paketen](bilder/pakete-zugeklappt.png)
 
 Im **Java-Export** wird aus jedem Paket ein Unterordner mit eigener
 `package`-Zeile; benutzt eine Klasse eine aus einem anderen Paket, schreibt der
@@ -137,7 +168,7 @@ Erweiterungsstellen und Generalisierung. Der **Systemrahmen** wird nicht
 gezeichnet, sondern **abgeleitet**: Er umschließt immer alle Anwendungsfälle und
 lässt die Akteure außen vor — genau das, was er aussagen soll.
 
-![Use-Case-Diagramm einer Flugticketverwaltung](bilder/use-case-diagramm.png)
+![Use-Case-Diagramm einer Wettbewerbsverwaltung](bilder/use-case-diagramm.png)
 
 ### Dazu
 
@@ -149,19 +180,20 @@ Klassendiagramm — mit Vererbung und Assoziationen.
 **Export als PNG und als SVG.** Das Vektorbild bleibt beim Vergrößern scharf —
 für Arbeitsblätter, Beamer und Ausdruck; LibreOffice und Word fügen es ein wie
 jedes andere Bild. Ist etwas **ausgewählt**, wird nur dieser Ausschnitt
-exportiert, eng zugeschnitten.
+exportiert, eng zugeschnitten. Exportiert wird immer hell.
 
 **Ordnung im Bild.** Elemente lassen sich aneinander **ausrichten** und mittig
 setzen, ein **Raster** ein- und ausblenden und getrennt davon **einrasten**.
-Beziehungslinien knicken um Kästen herum, Rollennamen und Multiplizitäten lassen
-sich verschieben, und eine **freie Linie** dient als reine Anmerkung — etwa um in
-einem Sequenzdiagramm zu zeigen, welche Daten zwischen zwei Aufrufen übertragen
-werden.
+Beziehungslinien knicken um Kästen herum oder laufen rechtwinklig, Rollennamen und
+Multiplizitäten lassen sich verschieben, und eine **freie Linie** dient als reine
+Anmerkung — etwa um in einem Sequenzdiagramm zu zeigen, welche Daten zwischen zwei
+Aufrufen übertragen werden.
 
 **Vierzehn Beispielprojekte** liegen bei, von der einfachen Bank bis zu einem
 Chorwettbewerb, einer Client-Server-Kommunikation, einer in Pakete gegliederten
-Schulverwaltung und einem Webshop mit Aufzählungen und Abhängigkeiten. Jedes ist in der beiliegenden LIESMICH einzeln beschrieben —
-mit dem, was sich daran zeigen lässt, und mit Fragen für den Unterricht.
+Schulverwaltung und einem Webshop mit Aufzählungen und Abhängigkeiten. Jedes ist in
+der beiliegenden LIESMICH einzeln beschrieben — mit dem, was sich daran zeigen
+lässt, und mit Fragen für den Unterricht.
 
 **Eine ausführliche Anleitung steckt im Programm** — Taste **F1**. Sie erklärt
 jedes Werkzeug, die vier Diagrammarten und die Regeln, nach denen der Editor
@@ -196,3 +228,11 @@ Kostenlos nutzbar und weitergebbar für Unterricht, Ausbildung und
 Selbststudium; keine kommerzielle Nutzung. Siehe **[LIZENZ.md](LIZENZ.md)**.
 
 Ohne Gewährleistung.
+
+### Verwendete Bibliothek
+
+Seit V3.2 enthält das Programm **[FlatLaf](https://github.com/JFormDesigner/FlatLaf)**
+3.7.2 von FormDev Software — für das Aussehen der Fenster, hell und dunkel. FlatLaf
+steht unter der **Apache License 2.0**; deren Text liegt dem Paket als
+`LIZENZ-FlatLaf.txt` bei und steckt zusätzlich in der JAR. Die Einschränkungen der
+Nutzungserlaubnis oben gelten nur für den ARS-UML-Editor selbst, nicht für FlatLaf.
