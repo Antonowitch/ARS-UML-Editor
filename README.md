@@ -120,7 +120,7 @@ Inhalt und nimmt ihn beim Verschieben mit. Jedes bekommt auf Wunsch eine
 Kästen" und „da sind drei Schichten". Im dunklen Erscheinungsbild erscheint sie
 abgedunkelt im selben Farbton.
 
-![Ein Projekt in den Paketen gui, modell und persistenz](bilder/pakete.png)
+![Ein Projekt in den Paketen gui, modell und persistenz](bilder/pakete-schulverwaltung.png)
 
 Der Ertrag steht an den Linien **zwischen** den Paketen: Die Oberfläche kennt das
 Modell und den Speicher — umgekehrt weiß das Modell von beiden nichts. Dafür gibt
