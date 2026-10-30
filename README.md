@@ -42,7 +42,8 @@ abgeleiteten Attribute —, nur heller, damit sie auf dunklem Grund lesbar sind.
 Klassen mit Attributen, Methoden, Sichtbarkeiten und Datentypen; Assoziation,
 Aggregation, Komposition und Vererbung, dazu Rollennamen, Multiplizitäten,
 Leserichtung und Navigierbarkeit. Abstrakte Klassen und Methoden werden kursiv
-gesetzt, statische unterstrichen.
+gesetzt, statische unterstrichen; über dem Namen einer abstrakten Klasse steht
+zusätzlich `<<abstract>>`, so wie `<<interface>>` über einer Schnittstelle.
 
 ![Klassendiagramm in der Analysesicht](bilder/klassendiagramm-analyse.png)
 
